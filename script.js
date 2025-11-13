@@ -11,7 +11,7 @@ const projects = [
 ];
 
 // Skills
-const skills = ["Backend Development", "Análise de Dados", "Power BI", "MySQL", "Python", "JavaScript", "HTML/CSS", "PHP"];
+const skills = ["PHP", "Linux", "MySQL", "JavaScript"];
 
 // Carrossel
 let currentIndex = 0;
