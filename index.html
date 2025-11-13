@@ -1,227 +1,139 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="src/img/controle-de-video-game.png">
-    <link rel="stylesheet" href="src/styles/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <title>Gabriel Sena</title>
+    <meta name="description" content="Portfolio de Gabriel Sena - Estudante de Análise e Desenvolvimento de Sistemas especializado em Backend, Banco de Dados e Projetos Inovadores">
+    <meta name="keywords" content="Gabriel Sena, portfolio, desenvolvedor backend, análise de dados, MySQL, Python, JavaScript">
+    <meta name="author" content="Gabriel Sena">
+    <title>Gabriel Sena | Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <header>
-        <!--Navbar do site-->
-        <nav id="navbar">
-            <i id="nav-logo">
-                <a href="#home">
-                    <img src="src/img/logo-sem-bg.png" width="300" height="100" alt="Logo">
-                </a>
-            </i>
-            <ul id="nav-list">
-                <li class="nav-item active">
-                    <a href="#home">Início</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projetos">Projetos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#sobre">Sobre</a>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="logo">Gabriel Sena</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li>
+                    <div class="theme-toggle" id="themeToggle" aria-label="Alternar modo escuro">
+                        <i class="fas fa-moon"></i>
+                    </div>
                 </li>
             </ul>
-            <button class="btn-default"
-                onclick="window.location.href='https://drive.google.com/file/d/1_YI_cCsqVj0YPLDtdpRBVlZvhszMSoMz/view?usp=sharing'">Baixar
-                CV</button>
-            <button id="mobile-btn">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
-        <!--Menu mobile-->
-        <div id="mobile-menu">
-            <ul id="mobile-nav-list">
-                <li class="nav-item">
-                    <a href="#home">Início</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projetos">Projetos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#sobre">Sobre</a>
-                </li>
-            </ul>
-            <button class="btn-default"
-                onclick="window.location.href='https://drive.google.com/file/d/1_YI_cCsqVj0YPLDtdpRBVlZvhszMSoMz/view?usp=sharing'">Baixar
-                CV</button>
-        </div>
     </header>
 
-    <main id="content">
-        <section id="home">
-            <div class="shape"></div>
-            <div id="cta">
-                <h1 class="title">
-                    <span>Gabriel</span> Sena
-                </h1>
-                <p id="description">Estudante de Análise e Desenvolvimento de Sistemas. Pretendo me especializar
-                    como desenvolvedor backend, aprender mais sobre banco de dados e aplicar esses conhecimentos em
-                    projetos desafiadores e inovadores.</p>
-                <!---->
-                <div class="question-form">
-                    <h2>Manda uma dúvida!</h2>
-                    <form id="form-question" action="/processa-formulario.php" method="post">
-                        <label for="nome"></label>
-                        <input type="text" id="nome" name="nome" placeholder="Nome" required>
-                        <br>
-                        <label for="email"></label>
-                        <input type="email" id="email" name="email" placeholder="E-mail" required>
-                        <br>
-                        <label for="mensagem"></label>
-                        <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem" required></textarea>
-                        <br>
-                        <button class="btn-default" type="submit">Enviar</button>
-                    </form>
-                </div>
-                <div class="social-media-buttons">
-                    <a href="https://github.com/gabriel-senan">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/gabrielsenan/">
-                        <i class="fa-brands fa-linkedin"></i>
-                    </a>
-                    <a href="https://wa.me/5511986411335">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div id="banner">
-                <img src="src/img/profile-pic (2).png" alt="Foto de perfil">
-            </div>
-        </section>
-
-        <section id="projetos">
-            <div class="titles">
-                <h2 class="section-title">Projetos</h2>
-                <h3 class="section-subtitle">Veja alguns dos meus projetos.</h3>
-            </div>
-
-            <div id="all-projects">
-                <!--Projeto 1-->
-                <div class="proj">
-                    <div class="proj-hammer-brush">
-                        <i class="fa-solid fa-hammer"></i>
-                    </div>
-                    <img src="src/img/In progress-amico.svg" width="300px" height="200px" class="proj-hammer"
-                        alt="Imagem do projeto">
-                    <h3 class="proj-title">Lista de compras</h3>
-                    <span class="proj-description">Conecta o cliente, mostra produtos e preços.</span>
-                    <h5>Andamento</h5>
-                    <progress class="proj-progress" value="5" max="100"></progress>
-                    <button class="btn-default btn-visitar">Visitar <i class="fa-solid fa-square-up-right"></i></button>
-                </div>
-
-                <!--Projeto 2-->
-                <div class="proj">
-                    <div class="proj-hammer-brush">
-                        <i class="fa-solid fa-hammer"></i>
-                    </div>
-                    <img src="src/img/In progress-amico.svg" width="300px" height="200px" class="proj-hammer"
-                        alt="Imagem do projeto">
-                    <h3 class="proj-title">Gestão de estoque</h3>
-                    <span class="proj-description">Programa que gerencia estoque.</span>
-                    <h5>Andamento</h5>
-                    <progress class="proj-progress" value="85" max="100"></progress>
-                    <button class="btn-default btn-visitar">Visitar <i class="fa-solid fa-square-up-right"></i></button>
-                </div>
-
-                <!--Projeto 3-->
-                <div class="proj">
-                    <div class="proj-hammer-brush">
-                        <i class="fa-solid fa-hammer"></i>
-                    </div>
-                    <img src="src/img/In progress-amico.svg" width="300px" height="200px" class="proj-hammer"
-                        alt="Imagem do projeto">
-                    <h3 class="proj-title">Meu portfólio</h3>
-                    <span class="proj-description">Este portfólio que você está vendo.</span>
-                    <h5>Andamento</h5>
-                    <progress class="proj-progress" value="90" max="100"></progress>
-                    <button class="btn-default btn-visitar">Visitar <i class="fa-solid fa-square-up-right"></i></button>
-                </div>
-
-                <!--Projeto 4-->
-                <div class="proj">
-                    <div class="proj-hammer-brush">
-                        <i class="fa-solid fa-hammer"></i>
-                    </div>
-                    <img src="src/img/In progress-amico.svg" width="300px" height="200px" class="proj-hammer"
-                        alt="Imagem do projeto">
-                    <h3 class="proj-title">Verificador de cartão</h3>
-                    <span class="proj-description">Descubra se seu cartão foi clonado.</span>
-                    <h5>Andamento</h5>
-                    <progress class="proj-progress" value="3" max="100"></progress>
-                    <button class="btn-default btn-visitar">Visitar <i class="fa-solid fa-square-up-right"></i></button>
-                </div>
-            </div>
-        </section>
-
-        <section id="sobre">
-            <div class="titles">
-                <h2 class="section-title">Sobre</h2>
-                <h3 class="section-subtitle">Breve resumo</h3>
-            </div>
-
-            <div class="eu-geral">
-                <div class="sobre-img">
-                    <img src="src/img/about-me-programming.svg" alt="Imagem developer">
-                </div>
-                <div class="sobre-description">
-                    <p>Sou estudante de Análise e Desenvolvimento de Sistemas na Faculdade São Francisco de Assis,
-                        com previsão de conclusão em 2025. Pretendo me especializar como desenvolvedor backend,
-                        aprender mais sobre banco de dados e aplicar esses conhecimentos em projetos desafiadores e
-                        inovadores. Sou apaixonado por tecnologia e pelo seu potencial de transformar o mundo.</p>
-
-                    <p>Fui assistente de pesquisa onde me desenvolvi bem com Análise de Dados e Power BI. No meu último
-                        trabalho, eu auxiliei na criação de um banco de dados MySQL, fiz análise de mercado e elaborei
-                        relatórios em Power BI, contribuindo para o desenvolvimento de estratégias de marketing e
-                        vendas. Me considero ágil em aprender e me adaptar a qualquer desafio!</p>
-
-                    <p>Se eu pudesse me definir com 3 palavras seriam: otimista, esforçado e perseverante!</p>
-                </div>
-            </div>
-            <div class="btn-section-sobre">
-                <a href="#home" class="btn-default">Início<i class="fa-solid fa-arrow-up"></i></a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <img src="src/img/wave.svg" class="ondas">
-        <div class="footer-items">
-            <span id="copyright">
-                &copy; 2024 Senan.
-            </span>
-            <div class="social-media-buttons">
-                <a href="https://github.com/gabriel-senan">
-                    <i class="fa-brands fa-github"></i>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-avatar">GS</div>
+            <h1>Gabriel Sena</h1>
+            <h2>Estudante de Análise e Desenvolvimento de Sistemas</h2>
+            <p>Focado em Backend, Banco de Dados e Análise de Dados</p>
+            <div class="cta-buttons">
+                <a href="#projetos" class="btn btn-primary">
+                    Ver Projetos
                 </a>
-                <a href="https://www.linkedin.com/in/gabrielsenan/">
-                    <i class="fa-brands fa-linkedin"></i>
+                <a href="curriculum.pdf" download class="btn btn-outline">
+                    Baixar Currículo
                 </a>
-                <a href="https://wa.me/5511986411335">
-                    <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div class="hero-social-links">
+                <a href="https://github.com/gabriel-senan" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/gabrielsenan/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
                 </a>
             </div>
         </div>
-    </footer>
-    <script src="src/js/script.js"></script>
-</body>
+    </section>
 
+    <!-- Projects Section - Carrossel Profissional -->
+    <section id="projetos">
+        <div class="section-title fade-in">
+            <h2>Projetos</h2>
+            <p>Todos os meus trabalhos em destaque</p>
+        </div>
+
+        <div class="carousel-container">
+            <button class="carousel-arrow prev" id="prevBtn" aria-label="Projeto anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="carouselTrack"></div>
+            </div>
+            <button class="carousel-arrow next" id="nextBtn" aria-label="Próximo projeto">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre">
+        <div class="section-title fade-in">
+            <h2>Sobre Mim</h2>
+            <p>Breve resumo</p>
+        </div>
+        <div class="about-content">
+            <div class="about-image fade-in">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="about-text fade-in">
+                <h3>Olá! Eu sou o Gabriel</h3>
+                <p>Sou estudante de Análise e Desenvolvimento de Sistemas na Faculdade São Francisco de Assis, com previsão de conclusão em 2025. Pretendo me especializar como desenvolvedor backend, aprender mais sobre banco de dados e aplicar esses conhecimentos em projetos desafiadores e inovadores. Sou apaixonado por tecnologia e pelo seu potencial de transformar o mundo.</p>
+                <p>Fui assistente de pesquisa onde me desenvolvi bem com Análise de Dados e Power BI. No meu último trabalho, eu auxiliei na criação de um banco de dados MySQL, fiz análise de mercado e elaborei relatórios em Power BI, contribuindo para o desenvolvimento de estratégias de marketing e vendas.</p>
+                <p>Me considero ágil em aprender e me adaptar a qualquer desafio. Se eu pudesse me definir com 3 palavras seriam: <strong>otimista</strong>, <strong>esforçado</strong> e <strong>perseverante</strong>!</p>
+                <div class="skills-grid" id="skillsGrid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Gabriel Sena. Todos os direitos reservados.</p>
+        <div class="footer-social">
+            <a href="https://github.com/gabriel-senan" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/gabrielsenan/" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://wa.me/5511999999999" target="_blank" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop" role="button" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
 </html>
