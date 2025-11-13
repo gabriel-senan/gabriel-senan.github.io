@@ -164,9 +164,9 @@ nav {
     transform: rotate(-45deg) translate(8px, -8px);
 }
 
-/* Hero */
+/* Hero - Altura reduzida */
 .hero {
-    min-height: 100vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -205,12 +205,6 @@ nav {
     font-size: 1.2rem;
     font-weight: 400;
     margin-bottom: calc(var(--spacing-unit) * 2);
-    color: var(--text-secondary);
-}
-
-.hero p {
-    font-size: 1rem;
-    margin-bottom: calc(var(--spacing-unit) * 4);
     color: var(--text-secondary);
 }
 
@@ -602,9 +596,12 @@ footer {
     }
     .nav-links.active { right: 0; }
 
+    .hero {
+        min-height: 75vh;
+        padding: calc(var(--spacing-unit) * 2);
+    }
     .hero h1 { font-size: 2.2rem; }
     .hero h2 { font-size: 1.1rem; }
-    .hero p { font-size: 0.95rem; }
     .section-title h2 { font-size: 1.8rem; }
     .cta-buttons { flex-direction: column; }
     .skills-grid { grid-template-columns: repeat(2, 1fr); }

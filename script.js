@@ -1,17 +1,13 @@
 // Todos os Projetos
 const projects = [
-    { title: "Portfolio", description: "Este portfólio profissional que você está vendo", link: "https://gabriel-senan.github.io/", tech: ["HTML", "CSS", "JavaScript"] },
-    { title: "GitHub Homepage", description: "Redesign minimalista da homepage do GitHub", link: "https://github.com/gabriel-senan/github-homepage", tech: ["TypeScript", "React", "Next.js"] },
-    { title: "Banco de Dados MySQL", description: "Sistema de banco de dados para análise de mercado", link: "https://github.com/gabriel-senan/banco-mysql-projeto", tech: ["MySQL", "Python"] },
-    { title: "Análise Power BI", description: "Dashboards e relatórios interativos de Power BI", link: "https://github.com/gabriel-senan/powerbi-analise", tech: ["Power BI", "DAX", "SQL"] },
-    { title: "Consult-card", description: "Projeto de consulta de informações de cartões", link: "https://github.com/gabriel-senan/Consult-card", tech: ["JavaScript", "HTML", "CSS"] },
-    { title: "Curso-php-B7-Web", description: "Curso de PHP da plataforma B7Web", link: "https://github.com/gabriel-senan/Curso-php-B7-Web", tech: ["PHP", "MySQL"] },
+    { title: "Portfolio", description: "Este portfólio que você está vendo", link: "https://gabriel-senan.github.io/", tech: ["HTML", "CSS", "JavaScript"] },
+    { title: "Consult-card", description: "Projeto de consulta de cartões", link: "https://github.com/gabriel-senan/Consult-card", tech: ["JavaScript", "HTML", "CSS"] },
     { title: "Roletador", description: "Roleta random com interface interativa", link: "https://github.com/gabriel-senan/Roletador", tech: ["JavaScript", "HTML", "CSS"] },
     { title: "Stardust Eight D4C", description: "Landing page recriada da Coderhouse", link: "https://gabriel-senan.github.io/stardusteight-d4c/", tech: ["HTML", "CSS", "JavaScript"] }
 ];
 
 // Skills
-const skills = ["PHP", "Linux", "MySQL", "JavaScript"];
+const skills = ["PHP", "JavaScript", "MySQL", "GIT", "Linux/ Windows",];
 
 // Carrossel
 let currentIndex = 0;
@@ -98,7 +94,7 @@ function renderSkills() {
     });
 }
 
-// Hamburger, Dark Mode, Back to Top
+// Hamburger, Back to Top
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 hamburger.addEventListener('click', () => {
@@ -122,20 +118,34 @@ window.addEventListener('scroll', () => {
 });
 backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
+// Tema: Inicia no modo claro, com persistência
 const themeToggle = document.getElementById('themeToggle');
 const html = document.documentElement;
-if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    html.setAttribute('data-theme', 'dark');
-    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-}
-themeToggle.addEventListener('click', () => {
-    if (html.getAttribute('data-theme') === 'dark') {
-        html.removeAttribute('data-theme');
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    } else {
+
+function applyTheme(theme) {
+    if (theme === 'dark') {
         html.setAttribute('data-theme', 'dark');
         themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    } else {
+        html.removeAttribute('data-theme');
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
     }
+}
+
+themeToggle.addEventListener('click', () => {
+    const isDark = html.hasAttribute('data-theme');
+    const newTheme = isDark ? 'light' : 'dark';
+    applyTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+});
+
+// Ao carregar: aplica tema salvo ou claro por padrão
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    applyTheme(savedTheme || 'light');
+    renderCarousel();
+    renderSkills();
+    setTimeout(observeFadeIn, 100);
 });
 
 function observeFadeIn() {
@@ -146,10 +156,3 @@ function observeFadeIn() {
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 }
-
-// Inicialização
-document.addEventListener('DOMContentLoaded', () => {
-    renderCarousel();
-    renderSkills();
-    setTimeout(observeFadeIn, 100);
-});
