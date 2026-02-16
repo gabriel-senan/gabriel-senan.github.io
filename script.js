@@ -55,7 +55,7 @@ function renderDots() {
 function updateCarousel() {
     const track = document.getElementById('carouselTrack');
     const perView = getItemsPerView();
-    const cardWidth = 280 + 16;
+    const cardWidth = window.innerWidth <= 768 ? 260 + 16 : 300 + 16;
     const offset = currentIndex * cardWidth * perView;
     track.style.transform = `translateX(-${offset}px)`;
 
